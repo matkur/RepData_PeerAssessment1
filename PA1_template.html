@@ -146,7 +146,8 @@ axis(2,at = seq(0, 200, by = 50))</code></pre>
 <pre class="r"><code>in_time &lt;-aggr_interval_steps$interval[ which.max(aggr_interval_steps$steps)]
 in_timeh&lt;-as.integer(in_time/100)
 in_times &lt;-sprintf(&quot;%2i:%2i&quot;, in_timeh,in_time-100*in_timeh)
-paste(&quot;Max steps taken in 5 minutes interval in slot&quot;, which.max(aggr_interval_steps$steps), &quot;i.e. at&quot;, in_times)</code></pre>
+paste(&quot;Max steps taken in 5 minutes interval in slot&quot;, 
+      which.max(aggr_interval_steps$steps), &quot;i.e. at&quot;, in_times)</code></pre>
 <pre><code>## [1] &quot;Max steps taken in 5 minutes interval in slot 104 i.e. at  8:35&quot;</code></pre>
 </div>
 <div id="imputing-missing-values" class="section level3">
@@ -218,7 +219,9 @@ with(steps_per_day1, {
 <li><p>Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.</p></li>
 </ol>
 <p>(1.) Create the factor variable and then aggregate the data.</p>
-<pre class="r"><code>data1$type_of_day&lt;- as.factor(ifelse (weekdays(as.Date(data1$date)) %in% c('Saturday','Sunday'),&quot;weekend&quot;,&quot;weekday&quot;)) 
+<pre class="r"><code>data1$type_of_day&lt;- as.factor(
+    ifelse (weekdays(as.Date(data1$date)) %in% c('Saturday','Sunday'),&quot;weekend&quot;,&quot;weekday&quot;)
+    ) 
 
 factored_steps &lt;- aggregate(
     data=data1,

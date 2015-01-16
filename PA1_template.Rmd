@@ -98,7 +98,8 @@ axis(2,at = seq(0, 200, by = 50))
 in_time <-aggr_interval_steps$interval[ which.max(aggr_interval_steps$steps)]
 in_timeh<-as.integer(in_time/100)
 in_times <-sprintf("%2i:%2i", in_timeh,in_time-100*in_timeh)
-paste("Max steps taken in 5 minutes interval in slot", which.max(aggr_interval_steps$steps), "i.e. at", in_times)
+paste("Max steps taken in 5 minutes interval in slot", 
+      which.max(aggr_interval_steps$steps), "i.e. at", in_times)
 
 ```
 ### Imputing missing values
@@ -179,7 +180,9 @@ For this part the weekdays() function may be of some help here. Use the dataset 
 (1.) Create the factor variable and then aggregate the data.
 
 ``` {r}
-data1$type_of_day<- as.factor(ifelse (weekdays(as.Date(data1$date)) %in% c('Saturday','Sunday'),"weekend","weekday")) 
+data1$type_of_day<- as.factor(
+    ifelse (weekdays(as.Date(data1$date)) %in% c('Saturday','Sunday'),"weekend","weekday")
+    ) 
 
 factored_steps <- aggregate(
     data=data1,
