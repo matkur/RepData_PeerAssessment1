@@ -18,15 +18,6 @@ keep_md: true
 data <- read.table(unz("./activity.zip", "activity.csv"), header=T, sep=",", stringsAsFactors=FALSE)
 ```
 
-```
-## Warning in open.connection(file, "rt"): cannot open zip file
-## './activity.zip'
-```
-
-```
-## Error in open.connection(file, "rt"): cannot open the connection
-```
-
 (2.) In this case the data needs no prosessing. 
 
 A portion of the original data is here (every 1000th row):
