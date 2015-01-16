@@ -5,6 +5,7 @@ html_document:
 keep_md: true
 ---
 
+## Reproducible Research: Peer Assessment 1
 
 ### Loading and preprocessing the data
 
