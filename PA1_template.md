@@ -13,7 +13,7 @@ keep_md: true
 1. Load the data (i.e. read.csv())
 2. Process/transform the data (if necessary) into a format suitable for your analysis
 
-(1.) The data is loaded directly from the zip-file and so character data will not be converted to factors.  
+(1.) The data is loaded directly from the zip-file and character data will not be converted to factors.  
 
 ```r
 data <- read.table(unz("./activity.zip", "activity.csv"), header=T, sep=",", stringsAsFactors=FALSE)
@@ -74,7 +74,7 @@ with(steps_per_day, {
     par(las=2, cex.axis=0.50)
     barplot(
         height=steps,
-        main="Graph of Total Number of Steps Taken Each Day",
+        main="Total Number of Steps Taken Each Day",
         xlab="",
         ylab="Steps per Day",
         names.arg=as.vector(date),
@@ -220,7 +220,7 @@ with(steps_per_day1, {
     par(las=2, cex.axis=0.50)
     barplot(
         height=steps,
-        main="Graph of Total Number of Steps Taken Each Day",
+        main="Total Number of Steps Taken Each Day",
         xlab="",
         ylab="Steps per Day",
         names.arg=as.vector(date),
